@@ -17,7 +17,22 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<appengine.target.version>1.9.60</appengine.target.version>
 	</properties>
+
+	<pluginRepositories>
+    <pluginRepository>
+        <id>google-snapshots</id>
+        <name>Google Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </pluginRepository>
+</pluginRepositories>
 
 	<dependencies>
 		<dependency>
@@ -36,10 +51,20 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${appengine.target.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.gudmart</groupId>
